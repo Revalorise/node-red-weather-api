@@ -1,7 +1,7 @@
 # Weather Data Extraction and Visualization Project
 
 ## Overview
-This project focuses on extracting weather data from the OpenWeatherAPI using Node-RED flow and processing the extracted data using Python scripts. The processed data is then visualized on a dashboard using Observable Plot.
+This project focuses on extracting weather data from the OpenWeatherAPI using Node-RED flow which runs every hour, and processing the extracted data using Python scripts. The processed data is then visualized on a dashboard using Observable Plot.
 
 ![image](https://github.com/Revalorise/node-red-weather-api/assets/82700651/b1fd45ec-b613-400e-ad76-3feccd9c0821)
 ## Features
