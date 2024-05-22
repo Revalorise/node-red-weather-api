@@ -1,0 +1,510 @@
+[
+    {
+        "id": "5654e44405c6079e",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "216d2cc8b1b25ade",
+        "type": "mqtt-broker",
+        "name": "MQHive Broker",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dda21f9f9bb358c5",
+        "type": "http request",
+        "z": "5654e44405c6079e",
+        "name": "get current weather data",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?lat=13.7548&lon=100.4694&appid=2021a3ee94f9db9a9b4969524600c412",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 670,
+        "y": 400,
+        "wires": [
+            [
+                "4e55f46eaae87c67"
+            ]
+        ]
+    },
+    {
+        "id": "4e55f46eaae87c67",
+        "type": "mqtt out",
+        "z": "5654e44405c6079e",
+        "name": "publish weather data",
+        "topic": "weather_data/current",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "216d2cc8b1b25ade",
+        "x": 920,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "00985ebff9d3ea67",
+        "type": "mqtt in",
+        "z": "5654e44405c6079e",
+        "name": "subscribe weather data",
+        "topic": "weather_data/current",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "216d2cc8b1b25ade",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 580,
+        "y": 460,
+        "wires": [
+            [
+                "514a4a04a8a47c79"
+            ]
+        ]
+    },
+    {
+        "id": "514a4a04a8a47c79",
+        "type": "file",
+        "z": "5654e44405c6079e",
+        "name": "write weather data",
+        "filename": "C:\\node_red\\weather_data\\current_Thai_weather.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 810,
+        "y": 460,
+        "wires": [
+            [
+                "3d7507067690266f"
+            ]
+        ]
+    },
+    {
+        "id": "3d7507067690266f",
+        "type": "file in",
+        "z": "5654e44405c6079e",
+        "name": "read weather data",
+        "filename": "C:\\node_red\\weather_data\\current_Thai_weather.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1030,
+        "y": 460,
+        "wires": [
+            [
+                "0e6f2cf8ed30afa2"
+            ]
+        ]
+    },
+    {
+        "id": "0e6f2cf8ed30afa2",
+        "type": "exec",
+        "z": "5654e44405c6079e",
+        "command": "cd C:\\node_red\\data_transformation && python current_weather_transformation.py",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "transform data",
+        "x": 1240,
+        "y": 460,
+        "wires": [
+            [
+                "c69160206f8643f2"
+            ],
+            [
+                "1dd624d8e044ea66",
+                "f3ac9c22c60c5c86"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1dd624d8e044ea66",
+        "type": "file",
+        "z": "5654e44405c6079e",
+        "name": "write error log",
+        "filename": "C:\\node_red\\error_log\\error_message.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1440,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f3ac9c22c60c5c86",
+        "type": "trigger",
+        "z": "5654e44405c6079e",
+        "name": "trigger script",
+        "op1": "",
+        "op2": "trigger",
+        "op1type": "nul",
+        "op2type": "flow",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1430,
+        "y": 520,
+        "wires": [
+            [
+                "5b2ce39b737de284"
+            ]
+        ]
+    },
+    {
+        "id": "5b2ce39b737de284",
+        "type": "exec",
+        "z": "5654e44405c6079e",
+        "command": "cd C:\\node_red\\error_log && chmod +x write_error_log.sh && bash write_error_log.sh ",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "add error timestamp",
+        "x": 1640,
+        "y": 520,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4ff534e5dd0df055",
+        "type": "exec",
+        "z": "5654e44405c6079e",
+        "command": "cd C:\\node_red\\metadata && chmod +x fetched_timestamp.sh && bash fetched_timestamp.sh ",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "write last fetched timestamp metadata",
+        "x": 710,
+        "y": 340,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c69160206f8643f2",
+        "type": "exec",
+        "z": "5654e44405c6079e",
+        "command": "cd C:\\node_red\\metadata && chmod +x transformed_timestamp.sh && bash transformed_timestamp.sh",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "write last transformed timestamp metadata",
+        "x": 1530,
+        "y": 400,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "0e022ff2a638f161",
+        "type": "http request",
+        "z": "5654e44405c6079e",
+        "name": "get forecast weather data",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "api.openweathermap.org/data/2.5/forecast?lat=13.7548&lon=100.4694&appid=2021a3ee94f9db9a9b4969524600c412",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 670,
+        "y": 620,
+        "wires": [
+            [
+                "9a3ba0db59df74b6"
+            ]
+        ]
+    },
+    {
+        "id": "9a3ba0db59df74b6",
+        "type": "mqtt out",
+        "z": "5654e44405c6079e",
+        "name": "publish weather data",
+        "topic": "weather_data/forecast",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "216d2cc8b1b25ade",
+        "x": 920,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "1b85767edb5b0571",
+        "type": "mqtt in",
+        "z": "5654e44405c6079e",
+        "name": "subscribe weather data",
+        "topic": "weather_data/forecast",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "216d2cc8b1b25ade",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 680,
+        "wires": [
+            [
+                "22acb2904cbf7950"
+            ]
+        ]
+    },
+    {
+        "id": "22acb2904cbf7950",
+        "type": "file",
+        "z": "5654e44405c6079e",
+        "name": "write weather data",
+        "filename": "C:\\node_red\\weather_data\\forecast_Thai_weather.json",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 510,
+        "y": 680,
+        "wires": [
+            [
+                "654a6b1ea3a6d01a"
+            ]
+        ]
+    },
+    {
+        "id": "654a6b1ea3a6d01a",
+        "type": "file in",
+        "z": "5654e44405c6079e",
+        "name": "read weather data",
+        "filename": "C:\\node_red\\weather_data\\forecast_Thai_weather.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 730,
+        "y": 680,
+        "wires": [
+            [
+                "ed82ef3deb7dd19c"
+            ]
+        ]
+    },
+    {
+        "id": "ed82ef3deb7dd19c",
+        "type": "exec",
+        "z": "5654e44405c6079e",
+        "command": "cd C:\\node_red\\data_transformation && python forecast_weather_transformation.py",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "transform data",
+        "x": 940,
+        "y": 680,
+        "wires": [
+            [
+                "d60472c1702f848b"
+            ],
+            [
+                "ce9ea03eb9862de2",
+                "b51db58d4184f211"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ce9ea03eb9862de2",
+        "type": "file",
+        "z": "5654e44405c6079e",
+        "name": "write error log",
+        "filename": "C:\\node_red\\error_log\\error_message.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1140,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b51db58d4184f211",
+        "type": "trigger",
+        "z": "5654e44405c6079e",
+        "name": "trigger script",
+        "op1": "",
+        "op2": "trigger",
+        "op1type": "nul",
+        "op2type": "flow",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1130,
+        "y": 720,
+        "wires": [
+            [
+                "76d0d87c79b9d968"
+            ]
+        ]
+    },
+    {
+        "id": "76d0d87c79b9d968",
+        "type": "exec",
+        "z": "5654e44405c6079e",
+        "command": "cd C:\\node_red\\error_log && chmod +x write_error_log.sh && bash write_error_log.sh ",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "add error timestamp",
+        "x": 1340,
+        "y": 720,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3c10c69a1db9cd23",
+        "type": "inject",
+        "z": "5654e44405c6079e",
+        "name": "trigger flow",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "trigger",
+        "payloadType": "flow",
+        "x": 250,
+        "y": 520,
+        "wires": [
+            [
+                "dda21f9f9bb358c5",
+                "4ff534e5dd0df055",
+                "0e022ff2a638f161"
+            ]
+        ]
+    },
+    {
+        "id": "d60472c1702f848b",
+        "type": "exec",
+        "z": "5654e44405c6079e",
+        "command": "cd C:\\node_red\\data_transformation && python get_dashboard_data.py",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "get dashboard data",
+        "x": 1150,
+        "y": 620,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    }
+]
