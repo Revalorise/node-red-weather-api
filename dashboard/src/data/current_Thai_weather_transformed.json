@@ -1,0 +1,39 @@
+{
+    "coord": {
+        "lon": 100.4694,
+        "lat": 13.7548
+    },
+    "weather": [
+        {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 29.81,
+        "feels_like": 36.81,
+        "temp_min": 27.75,
+        "temp_max": 30.54
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 1.85,
+        "deg": 173,
+        "gust": 2.8
+    },
+    "clouds": {
+        "all": 100
+    },
+    "dt": "2024-05-22 08:51:14",
+    "sys": {
+        "sunrise": "2024-05-22 05:50:22",
+        "sunset": "2024-05-22 18:39:31"
+    },
+    "timezone": 25200,
+    "id": 1619460,
+    "name": "Bangkok Noi",
+    "cod": 200
+}
