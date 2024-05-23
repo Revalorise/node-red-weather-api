@@ -27,23 +27,23 @@ function capitalizeWords(str) {
     <table>
       <tr>
         <td align="center"><h2>Location:</h2></td>
-        <td align="center"><h4>${currentWeather.name}</h4></td>
+        <td align="center"><h2>${currentWeather.name}</h2></td>
       </tr>
       <tr>
         <td align="center"><h2>Last Updated:</h2></td>
-        <td align="center"><h4>${currentWeather.dt}</h4></td>
+        <td align="center"><h2>${currentWeather.dt}</h2></td>
       </tr>
       <tr>
         <td align="center"><h2>Weather:</h2></td>
-        <td align="center"><h4>${capitalizeWords(currentWeather.weather[0].description)}</h4></td>
+        <td align="center"><h2>${capitalizeWords(currentWeather.weather[0].description)}</h2></td>
       </tr>
       <tr>
         <td align="center"><h2>Sunrise:</h2></td>
-        <td align="center"><h4>${currentWeather.sys.sunrise}</h4></td>
+        <td align="center"><h2>${currentWeather.sys.sunrise}</h2></td>
       </tr>
       <tr>
         <td align="center"><h2>Sunset:</h2></td>
-        <td align="center"><h4>${currentWeather.sys.sunset}</h4></td>
+        <td align="center"><h2>${currentWeather.sys.sunset}</h2></td>
       </tr>
     </table>
   </div>

@@ -1,0 +1,3 @@
+C:\node_red\line_messaging\check_and_publish_temp\publish_temp.py:16: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  client = paho.Client(protocol=paho.MQTTv311)
+[There was an error during: Thu May 23 17:53:15 SEAST 2024]
