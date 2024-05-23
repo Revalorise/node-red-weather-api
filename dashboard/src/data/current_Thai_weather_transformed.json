@@ -13,24 +13,24 @@
     ],
     "base": "stations",
     "main": {
-        "temp": 29.81,
-        "feels_like": 36.81,
-        "temp_min": 27.75,
-        "temp_max": 30.54
+        "temp": 28.55,
+        "feels_like": 34.7,
+        "temp_min": 26.64,
+        "temp_max": 28.9
     },
     "visibility": 10000,
     "wind": {
-        "speed": 1.85,
-        "deg": 173,
-        "gust": 2.8
+        "speed": 4.95,
+        "deg": 193,
+        "gust": 8.02
     },
     "clouds": {
         "all": 100
     },
-    "dt": "2024-05-22 08:51:14",
+    "dt": "2024-05-23 08:14:09",
     "sys": {
-        "sunrise": "2024-05-22 05:50:22",
-        "sunset": "2024-05-22 18:39:31"
+        "sunrise": "2024-05-23 05:50:14",
+        "sunset": "2024-05-23 18:39:50"
     },
     "timezone": 25200,
     "id": 1619460,
