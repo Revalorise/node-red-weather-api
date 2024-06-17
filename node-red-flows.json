@@ -55,7 +55,7 @@
         "senderr": false,
         "headers": [],
         "x": 670,
-        "y": 400,
+        "y": 280,
         "wires": [
             [
                 "4e55f46eaae87c67"
@@ -77,7 +77,7 @@
         "expiry": "",
         "broker": "216d2cc8b1b25ade",
         "x": 920,
-        "y": 400,
+        "y": 280,
         "wires": []
     },
     {
@@ -93,8 +93,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 580,
-        "y": 460,
+        "x": 520,
+        "y": 360,
         "wires": [
             [
                 "514a4a04a8a47c79"
@@ -112,8 +112,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 810,
-        "y": 460,
+        "x": 750,
+        "y": 360,
         "wires": [
             [
                 "3d7507067690266f"
@@ -132,8 +132,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 1030,
-        "y": 460,
+        "x": 970,
+        "y": 360,
         "wires": [
             [
                 "0e6f2cf8ed30afa2"
@@ -152,8 +152,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "transform data",
-        "x": 1240,
-        "y": 460,
+        "x": 1180,
+        "y": 360,
         "wires": [
             [
                 "c69160206f8643f2"
@@ -176,8 +176,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1440,
-        "y": 480,
+        "x": 1380,
+        "y": 340,
         "wires": [
             []
         ]
@@ -199,8 +199,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1430,
-        "y": 520,
+        "x": 1370,
+        "y": 380,
         "wires": [
             [
                 "5b2ce39b737de284"
@@ -219,8 +219,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "add error timestamp",
-        "x": 1640,
-        "y": 520,
+        "x": 1580,
+        "y": 380,
         "wires": [
             [],
             [],
@@ -240,7 +240,7 @@
         "oldrc": false,
         "name": "write last fetched timestamp metadata",
         "x": 710,
-        "y": 340,
+        "y": 220,
         "wires": [
             [],
             [],
@@ -259,8 +259,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "write last transformed timestamp metadata",
-        "x": 1530,
-        "y": 400,
+        "x": 1470,
+        "y": 260,
         "wires": [
             [],
             [],
@@ -283,8 +283,8 @@
         "authType": "basic",
         "senderr": false,
         "headers": [],
-        "x": 670,
-        "y": 620,
+        "x": 570,
+        "y": 440,
         "wires": [
             [
                 "9a3ba0db59df74b6"
@@ -305,8 +305,8 @@
         "correl": "",
         "expiry": "",
         "broker": "216d2cc8b1b25ade",
-        "x": 920,
-        "y": 620,
+        "x": 820,
+        "y": 440,
         "wires": []
     },
     {
@@ -322,8 +322,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 280,
-        "y": 680,
+        "x": 420,
+        "y": 500,
         "wires": [
             [
                 "22acb2904cbf7950"
@@ -341,8 +341,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 510,
-        "y": 680,
+        "x": 650,
+        "y": 500,
         "wires": [
             [
                 "654a6b1ea3a6d01a"
@@ -361,8 +361,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 730,
-        "y": 680,
+        "x": 870,
+        "y": 500,
         "wires": [
             [
                 "ed82ef3deb7dd19c"
@@ -381,11 +381,11 @@
         "winHide": false,
         "oldrc": false,
         "name": "transform data",
-        "x": 940,
-        "y": 680,
+        "x": 1080,
+        "y": 500,
         "wires": [
             [
-                "d60472c1702f848b"
+                "158aa4e50ac27fda"
             ],
             [
                 "ce9ea03eb9862de2",
@@ -405,8 +405,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1140,
-        "y": 680,
+        "x": 1380,
+        "y": 540,
         "wires": [
             []
         ]
@@ -428,8 +428,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1130,
-        "y": 720,
+        "x": 1370,
+        "y": 580,
         "wires": [
             [
                 "76d0d87c79b9d968"
@@ -448,8 +448,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "add error timestamp",
-        "x": 1340,
-        "y": 720,
+        "x": 1580,
+        "y": 580,
         "wires": [
             [],
             [],
@@ -477,8 +477,8 @@
         "topic": "",
         "payload": "trigger",
         "payloadType": "flow",
-        "x": 250,
-        "y": 520,
+        "x": 210,
+        "y": 380,
         "wires": [
             [
                 "dda21f9f9bb358c5",
@@ -488,19 +488,207 @@
         ]
     },
     {
-        "id": "d60472c1702f848b",
+        "id": "158aa4e50ac27fda",
         "type": "exec",
         "z": "5654e44405c6079e",
-        "command": "cd C:\\node_red\\data_transformation && python get_dashboard_data.py",
+        "command": "cd C:\\node_red\\line_messaging\\check_and_publish_temp && python publish_temp.py",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
         "timer": "",
         "winHide": false,
         "oldrc": false,
-        "name": "get dashboard data",
-        "x": 1150,
-        "y": 620,
+        "name": "publish temperature",
+        "x": 1300,
+        "y": 460,
+        "wires": [
+            [],
+            [
+                "7e56d53282659882",
+                "b09fa3093d71c034"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "693ab8fe8acd2fda",
+        "type": "inject",
+        "z": "5654e44405c6079e",
+        "name": "inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "begin",
+        "payloadType": "flow",
+        "x": 1090,
+        "y": 440,
+        "wires": [
+            [
+                "158aa4e50ac27fda"
+            ]
+        ]
+    },
+    {
+        "id": "b725413927de7ff3",
+        "type": "switch",
+        "z": "5654e44405c6079e",
+        "name": "check temperature",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "30",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "25",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1570,
+        "y": 660,
+        "wires": [
+            [
+                "e97e75e749a21b58"
+            ],
+            [
+                "670edfb36b02fbb2"
+            ]
+        ]
+    },
+    {
+        "id": "8a9c6f92f17ca538",
+        "type": "mqtt in",
+        "z": "5654e44405c6079e",
+        "name": "subscribe temperature value",
+        "topic": "weather_data/temperature",
+        "qos": "1",
+        "datatype": "utf8",
+        "broker": "216d2cc8b1b25ade",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1320,
+        "y": 660,
+        "wires": [
+            [
+                "b725413927de7ff3"
+            ]
+        ]
+    },
+    {
+        "id": "670edfb36b02fbb2",
+        "type": "exec",
+        "z": "5654e44405c6079e",
+        "command": "cd C:\\node_red\\line_messaging\\line_notification && python cold_weather_notify.py",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Cold",
+        "x": 1750,
+        "y": 700,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e97e75e749a21b58",
+        "type": "exec",
+        "z": "5654e44405c6079e",
+        "command": "cd C:\\node_red\\line_messaging\\line_notification && python hot_weather_notify.py",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Hot",
+        "x": 1750,
+        "y": 640,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7e56d53282659882",
+        "type": "file",
+        "z": "5654e44405c6079e",
+        "name": "write error log",
+        "filename": "C:\\node_red\\error_log\\error_message.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1520,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b09fa3093d71c034",
+        "type": "trigger",
+        "z": "5654e44405c6079e",
+        "name": "trigger script",
+        "op1": "",
+        "op2": "trigger",
+        "op1type": "nul",
+        "op2type": "flow",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1510,
+        "y": 480,
+        "wires": [
+            [
+                "435a8bf75eaabe97"
+            ]
+        ]
+    },
+    {
+        "id": "435a8bf75eaabe97",
+        "type": "exec",
+        "z": "5654e44405c6079e",
+        "command": "cd C:\\node_red\\error_log && chmod +x write_error_log.sh && bash write_error_log.sh ",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "add error timestamp",
+        "x": 1720,
+        "y": 480,
         "wires": [
             [],
             [],
